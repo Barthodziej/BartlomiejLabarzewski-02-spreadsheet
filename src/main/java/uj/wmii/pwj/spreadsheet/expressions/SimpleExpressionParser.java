@@ -19,8 +19,6 @@ public class SimpleExpressionParser implements IExpressionParser {
 
     @Override
     public IExpression parse(String input) {
-        // TODO: Analyze wrong input
-        // TODO: Regexes
         if (input.matches("-?\\d+")) {
             return new ValueExpression(Integer.parseInt(input));
         }

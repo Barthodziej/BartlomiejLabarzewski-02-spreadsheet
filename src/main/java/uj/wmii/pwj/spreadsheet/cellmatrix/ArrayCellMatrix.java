@@ -44,9 +44,6 @@ public class ArrayCellMatrix implements ICellMatrix {
 
     @Override
     public ICell getCell(String cellAddress) {
-        // TODO: Exceptions when the argument is:
-        //       - null
-        //       - an invalid string to be a signature
         int[] coordinates = addressParser.parse(cellAddress);
         return cells[coordinates[0]][coordinates[1]];
     }

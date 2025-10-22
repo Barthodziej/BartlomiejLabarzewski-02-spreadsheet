@@ -10,7 +10,6 @@ public class ExcelCellAddressParser implements ICellAddressParser {
         boolean columnFinished;
         for (Character c : signature.toCharArray()) {
             if ('A' <= c && c <= 'Z' || 'a' <= c && c <= 'z') {
-                // TODO: Exception when found an integer before
                 c = Character.toLowerCase(c);
                 coordinates[1] *= latinAlphabetLength;
                 coordinates[1] += c - 'a' + 1;
@@ -19,9 +18,6 @@ public class ExcelCellAddressParser implements ICellAddressParser {
                 columnFinished = true;
                 coordinates[0] *= 10;
                 coordinates[0] += c - '0';
-            }
-            else {
-                // TODO: Exception - is not a letter nor a digit
             }
         }
         coordinates[0]--;
